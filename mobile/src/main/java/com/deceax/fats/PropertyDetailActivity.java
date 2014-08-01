@@ -23,7 +23,7 @@ public class PropertyDetailActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        buildCourseList();
+        buildPropertyList();
         final int i = getIntent().getExtras().getInt("index");
 
         View view = getLayoutInflater().inflate(R.layout.activity_property_detail, null);
@@ -53,7 +53,7 @@ public class PropertyDetailActivity extends Activity {
         mFab.setOnClickListener(fabClickListener);
     }
 
-    private View.OnClickListener fabClickListener = new View.OnClickListener() {
+    private final View.OnClickListener fabClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             int cx = (mFab.getLeft() + mFab.getRight()) / 2;
@@ -91,7 +91,7 @@ public class PropertyDetailActivity extends Activity {
         return ret;
     }
 
-    private void buildCourseList() {
+    private void buildPropertyList() {
         mImageIds[0] = R.drawable.snowy;
         mImageIds[1] = R.drawable.tombstone;
         mImageIds[2] = R.drawable.sunset;

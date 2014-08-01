@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.transition.Explode;
-import android.transition.Slide;
 import android.util.Pair;
 import android.view.View;
 
@@ -17,7 +15,7 @@ public class PropertyChooserActivity extends Activity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    private View.OnClickListener mOnCardClick = new View.OnClickListener() {
+    private final View.OnClickListener mOnCardClick = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             transition(view);
@@ -26,7 +24,7 @@ public class PropertyChooserActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        buildCourseList();
+        buildPropertyList();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_property_chooser);
@@ -49,16 +47,17 @@ public class PropertyChooserActivity extends Activity {
         View textView = viewHolder.mPropertyName;
 
         Intent intent = new Intent(this, PropertyDetailActivity.class);
+        intent.putExtra("index", i);
+
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(
                 this, Pair.create(imageView, "property_image"), Pair.create(textView, "property_name"));
-        intent.putExtra("index", i);
 
         startActivity(intent, options.toBundle());
     }
 
     Property[] mProperties = new Property[6];
 
-    private void buildCourseList() {
+    private void buildPropertyList() {
         mProperties[0] = new Property("Snowy", getResources().getDrawable(R.drawable.snowy));
         mProperties[1] = new Property("Tombstone", getResources().getDrawable(R.drawable.tombstone));
         mProperties[2] = new Property("Sunset", getResources().getDrawable(R.drawable.sunset));
