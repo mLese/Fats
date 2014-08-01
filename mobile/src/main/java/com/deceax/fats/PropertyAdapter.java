@@ -12,15 +12,13 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.ViewHo
     private View.OnClickListener mOnClickListener;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private View mCardView;
         public TextView mPropertyName;
         public ImageView mPropertyImage;
 
         public ViewHolder(View v) {
             super(v);
-            mCardView = v;
-            mPropertyName = (TextView)mCardView.findViewById(R.id.property_name);
-            mPropertyImage = (ImageView)mCardView.findViewById(R.id.property_image);
+            mPropertyName = (TextView)v.findViewById(R.id.property_name);
+            mPropertyImage = (ImageView)v.findViewById(R.id.property_image);
         }
     }
 

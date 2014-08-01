@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="AppTheme" parent="android:Theme.Material.Light">
+        <!-- Theme Colors -->
         <item name="android:colorPrimary">@color/primary</item>
         <item name="android:colorPrimaryDark">@color/primary_dark</item>
-        <item name="android:colorBackground">@color/white</item>
         <item name="android:colorAccent">@color/accent</item>
         <item name="android:colorControlHighlight">@color/control_highlight</item>
+        <item name="android:colorBackground">@color/white</item>
         <item name="android:textColorPrimary">@color/white</item>
-
         <item name="android:navigationBarColor">?android:colorPrimaryDark</item>
         <item name="android:statusBarColor">?android:colorPrimaryDark</item>
 
+        <!-- Shared Element Transitions -->
         <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/move_image</item>
+        <item name="android:windowSharedElementExitTransition">
+            @transition/move_image</item>
+
     </style>
 </resources>

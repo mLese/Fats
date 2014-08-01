@@ -8,10 +8,11 @@
     <RelativeLayout
         android:id="@+id/image_frame"
         android:layout_width="match_parent"
-        android:layout_height="430dp">
+        android:layout_height="420dp">
 
         <ImageView
             android:id="@+id/detail_property_image"
+            android:viewName="property_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop" />
@@ -31,8 +32,8 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_gravity="bottom|right"
-            android:layout_marginBottom="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginBottom="32dp"
+            android:layout_marginRight="32dp"
             android:background="@drawable/ripple"
             android:elevation="@dimen/fab_elevation"
             android:src="@drawable/ic_menu_mapmode"
@@ -41,13 +42,14 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/detail_course_name"
+        android:id="@+id/detail_property_name"
+        android:viewName="property_name"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:layout_below="@id/image_frame"
         android:elevation="8dp"
         android:gravity="center_vertical"
-        android:hint="Course Name"
+        android:hint="Property Name"
         android:paddingLeft="16dp"
         android:textSize="45sp" />
 
